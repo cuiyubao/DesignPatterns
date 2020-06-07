@@ -58,6 +58,7 @@ class FilterChain implements Filter {
         return this;
     }
 
+    @Override
     public boolean doFilter(Request request, Response response) {
 
         for(Filter f : filters ){

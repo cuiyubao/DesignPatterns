@@ -19,13 +19,17 @@ class Bullet{
 public class BulletPool {
     List<Bullet> bullets = new ArrayList<>();
     {
-        for(int i=0; i<5; i++) bullets.add(new Bullet());
+        for(int i=0; i<5; i++) {
+            bullets.add(new Bullet());
+        }
     }
 
     public Bullet getBullet() {
         for(int i=0; i<bullets.size(); i++) {
             Bullet b = bullets.get(i);
-            if(!b.living) return b;
+            if(!b.living) {
+                return b;
+            }
         }
 
         return new Bullet();

@@ -96,9 +96,12 @@ class FilterChain implements Filter {
         return this;
     }
 
+    @Override
     public boolean doFilter(Msg m) {
         for(Filter f : filters) {
-            if(!f.doFilter(m)) return false;
+            if(!f.doFilter(m)) {
+                return false;
+            }
         }
 
         return true;
